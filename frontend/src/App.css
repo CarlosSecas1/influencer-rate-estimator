@@ -1,0 +1,259 @@
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page-heading {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: #132033;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.estimate-form,
+.result-panel {
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.estimate-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 24px;
+}
+
+.estimate-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.estimate-form label.full-width,
+.checkbox-row,
+.form-actions {
+  grid-column: 1 / -1;
+}
+
+.estimate-form span,
+.checkbox-label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.estimate-form input,
+.estimate-form select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #132033;
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.estimate-form input:focus,
+.estimate-form select:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.16);
+  outline: none;
+}
+
+.estimate-form input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.checkbox-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.checkbox-option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 48px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.checkbox-option input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  accent-color: #0f766e;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.estimate-button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  background: #0f766e;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  padding: 0 20px;
+}
+
+.estimate-button:hover {
+  background: #115e59;
+}
+
+.estimate-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.field-help,
+.field-error {
+  margin: -2px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.field-help {
+  color: #64748b;
+}
+
+.field-error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.result-panel {
+  min-height: 312px;
+  padding: 24px;
+}
+
+.result-panel h2 {
+  margin: 0 0 18px;
+  color: #132033;
+  font-size: 1.2rem;
+}
+
+.empty-state,
+.error-message {
+  margin: 0;
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.empty-state {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.estimate-range {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.range-card {
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 14px;
+}
+
+.range-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.range-card strong {
+  color: #132033;
+  font-size: 1.7rem;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 14px 0;
+}
+
+.metric-row strong {
+  color: #132033;
+}
+
+.explanation-list {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: #334155;
+}
+
+.explanation-list li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+  .app-shell {
+    width: min(100% - 24px, 640px);
+    padding: 24px 0;
+  }
+
+  .workspace,
+  .estimate-form,
+  .checkbox-row,
+  .estimate-range {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading h1 {
+    font-size: 1.65rem;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .estimate-button {
+    width: 100%;
+  }
+}
